@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Mamta Soap Works{% endblock %}
+
+{% block content %}
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          <h1 class="heading"><img src="{{ url_for('static', filename='images/logo-removebg.png') }}" class="logo-img"> Mamta Soap Works</h1>
+          <p class="moto">Kum Gale Jyada Chale</p>
+        </div>
+      </div>
+      <div class="row my-2">
+        <div class="col-md-5 d-flex justify-content-center align-items-center">
+          <img src="{{ url_for('static', filename='images/rk_soap.jpeg') }}" class="d-block rk-img" alt="Rk soap with water">
+        </div>
+        <div class="col-md-7 descrp">
+          <p class="text-center">What sets us apart?</p>
+          <ul><li>4 long decade expertise in soap manufacturing</li></ul>
+        </div>
+      </div>
+      </div>
+
+    <div class="container">
+        <div class="row">
+          <div class="col-md-4 text-center"><h2>Address</h2>
+            <p class="addr">
+              Mamta Soap Works<br/>
+              Gajanand Compound<br/>
+              Dhobi Ghat Road<br/>
+              Ulhasnagar 421001<br/>
+            </p>
+          </div>
+          <div class="col-md-4 text-center"><h2>Form</h2></div>
+          <div class="col-md-4 text-center"><h2>Map</h2></div>
+        </div>
+    </div>
+{% endblock %}
