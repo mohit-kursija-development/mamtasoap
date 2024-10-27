@@ -1,38 +1,202 @@
-{% extends "base.html" %}
-
-{% block title %}Home - Mamta Soap Works{% endblock %}
-
+{% extends "base.html" %} {% block title %}Home - Mamta Soap Works{% endblock %}
 {% block content %}
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-md-10">
-          <h1 class="heading"><img src="{{ url_for('static', filename='images/logo-removebg.png') }}" class="logo-img"> Mamta Soap Works</h1>
-          <p class="moto">Kum Gale Jyada Chale</p>
-        </div>
-      </div>
-      <div class="row my-2">
-        <div class="col-md-5 d-flex justify-content-center align-items-center">
-          <img src="{{ url_for('static', filename='images/rk_soap.jpeg') }}" class="d-block rk-img" alt="Rk soap with water">
-        </div>
-        <div class="col-md-7 descrp">
-          <p class="text-center">What sets us apart?</p>
-          <ul><li>4 long decade expertise in soap manufacturing</li></ul>
-        </div>
-      </div>
-      </div>
-
-    <div class="container">
-        <div class="row">
-          <div class="col-md-4 text-center"><h2>Address</h2>
-            <p class="addr">
-              Mamta Soap Works<br/>
-              Gajanand Compound<br/>
-              Dhobi Ghat Road<br/>
-              Ulhasnagar 421001<br/>
-            </p>
-          </div>
-          <div class="col-md-4 text-center"><h2>Form</h2></div>
-          <div class="col-md-4 text-center"><h2>Map</h2></div>
-        </div>
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <h1 class="heading">
+        <img
+          src="{{ url_for('static', filename='images/logo-removebg.png') }}"
+          class="logo-img"
+        />
+        Mamta Soap Works
+      </h1>
+      <!-- <p class="moto">Kum Gale Jyada Chale</p> -->
     </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4 d-flex justify-content-center my-3">
+      <img
+        src="{{ url_for('static', filename='images/rk_soap.jpeg') }}"
+        class="d-block rk-img animate__animated animate__fadeInLeft"
+        alt="Rk soap with water"
+      />
+    </div>
+    <div class="col-md-4 d-flex justify-content-center my-3">
+      <img
+        src="{{ url_for('static', filename='images/girl_soap_rk.jpeg') }}"
+        class="d-block rk-img animate__animated animate__fadeInUp"
+        alt="Rk soap with water"
+      />
+    </div>
+    <div
+      class="col-md-4 d-flex justify-content-center my-3 align-items-center animate__animated animate__fadeInRight">
+      <div class="cust-text rk-img d-flex justify-content-center align-items-center"><b><h1>Kum Ghale<br /><br />Jyada Chale ....</h1></b></div>
+    </div>
+  </div>
+
+  <br /><br />
+  <!-- img and right desc -->
+  <div class="row my-5">
+    <div class="col-md-6 d-flex justify-content-center align-items-center">
+      <img
+        src="{{ url_for('static', filename='images/12----5X7-removebg-preview.png') }}"
+        class="d-block rk-img rk-cust-img"
+        alt="Rk soap bottles img"
+      />
+    </div>
+    <div class="col-md-6 descrp">
+      <br />
+      <p class="text-center my-3"><b>What sets us apart?</b></p>
+      <br />
+      <ul class="mx-4">
+        <li class="cust-li">
+          With over four decades of expertise in soap manufacturing, we have
+          proudly served since 1978.
+        </li>
+        <br />
+        <li class="cust-li">
+          We are committed to ethical production practices, using only
+          plant-based oils and without any animal fat derivatives.
+        </li>
+        <br />
+        <li class="cust-li">
+          Our products undergo rigorous quality control to ensure the highest
+          standards of excellence.
+        </li>
+        <br />
+        <li class="cust-li">
+          We ensure timely delivery, complete with detailed invoicing and
+          reliable service.
+        </li>
+        <br />
+        <li class="cust-li">
+          Our extensive product range includes a variety of soap formulations,
+          including detergent liquids, washing powders and bars, to meet diverse needs.
+        </li>
+        <br />
+      </ul>
+    </div>
+  </div>
+</div>
+
+<br /><br />
+<div class="container-fluid">
+  <h1>Our Products</h1>
+  <br />
+  <div class="row">
+    <div class="col-md-4 d-flex justify-content-center my-4">
+      <div class="card" style="width: 20rem">
+        <img
+          src="{{ url_for('static', filename='images/10----5X7.jpg') }}"
+          width="18rem"
+          height="300px"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">R.K Dishwasing Liquid</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">An item</li>
+          <li class="list-group-item">A second item</li>
+          <li class="list-group-item">A third item</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-4 d-flex justify-content-center my-4">
+      <div class="card" style="width: 20rem">
+        <img
+          src="{{ url_for('static', filename='images/6----5X7.jpg') }}"
+          width="18rem"
+          height="300px"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">Ramesh Washing Soap</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">An item</li>
+          <li class="list-group-item">A second item</li>
+          <li class="list-group-item">A third item</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-4 d-flex justify-content-center my-4">
+      <div class="card" style="width: 20rem">
+        <img
+          src="{{ url_for('static', filename='images/14----5X7.jpg') }}"
+          width="18rem"
+          height="300px"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">R.K. Fabric Cleaner</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">An item</li>
+          <li class="list-group-item">A second item</li>
+          <li class="list-group-item">A third item</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-4 d-flex justify-content-center my-4">
+      <div class="card" style="width: 20rem">
+        <img
+          src="{{ url_for('static', filename='images/31----5X7.jpg') }}"
+          width="18rem"
+          height="300px"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">R.K. Dishwasing Liquid</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">An item</li>
+          <li class="list-group-item">A second item</li>
+          <li class="list-group-item">A third item</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-4 d-flex justify-content-center my-4">
+      <div class="card" style="width: 20rem">
+        <img
+          src="{{ url_for('static', filename='images/1----5X7.jpg') }}"
+          width="18rem"
+          height="300px"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">R.K. Washing Soap</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">An item</li>
+          <li class="list-group-item">A second item</li>
+          <li class="list-group-item">A third item</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br /><br />
+<div class="container-fluid">
+  <h1>Contact Us</h1><br/><br/><br/><br/><br/><br/><br/><br/>
+  <div class="row">
+    <div class="col-md-6 text-center">
+      <h2><b>Address</b></h2><br/>
+      <p class="addr">
+        Mamta Soap Works<br />
+        Gajanand Compound<br />
+        Dhobi Ghat Road<br />
+        Ulhasnagar 421001<br />
+      </p><br/><br/><br/><br/><br/><br/>
+    </div>
+    <div class="col-md-6 text-center"><h2><b>Form</b></h2></div>
+  </div>
+</div>
 {% endblock %}

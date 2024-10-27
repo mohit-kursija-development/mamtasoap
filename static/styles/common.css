@@ -6,7 +6,7 @@ body {
 }
 
 .navbar {
-  background-color: #2E073F;
+  background-color: #44548c;
   padding: 10px;
   text-align: center;
 }
@@ -27,7 +27,7 @@ body {
 }
 
 footer {
-  background-color: #2E073F;
+  background-color: #44548c;
   color: #EBD3F8;
   padding: 10px;
   text-align: center;
@@ -45,7 +45,7 @@ html, body {
 
 .cust-nav-bg{
   background-color: #EBD3F8;
-  color: #2E073F;
+  color: #44548c;
 }
 .logo-img{
   height: 100px;
@@ -65,10 +65,31 @@ html, body {
   border-top-left-radius: 30px;
   border-bottom-right-radius: 30px;
 }
+.rk-cust-img{
+  height: 450px;
+}
 .descrp{
   text-align: left;
+  background-color: #44548c; 
+  color: #EBD3F8;
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
 }
-
+.cust-li{
+  list-style-image: url(/right-arrow.svg);
+  /* OR */
+  list-style-type: '👉';
+  padding-inline-start: 1ch;
+}
+.cust-text{
+  background-color: #FF885B;
+}
+.addr{
+  font-size: 1.5rem;
+}
+.card-img-top{
+  object-fit: contain;
+}
 
 @media only screen and (max-width: 800px) {
   .navbar a ,.moto,.heading{
@@ -77,14 +98,15 @@ html, body {
   .logo-img{
     height: 50px;
   }
-  .moto{
-    left: 50px;
-    top: -25px;
-    font-size: 0.75rem;
-  }
   .rk-img{
-    width: 300px;
-    height: 300px;
+    width: 350px;
+    height: 350px;
+  }
+  .descrp{
+    border: none;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+    
   }
 }
 
