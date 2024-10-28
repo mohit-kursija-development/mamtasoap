@@ -3,41 +3,65 @@
 <div class="container-fluid">
   <div class="row justify-content-center">
     <div class="col-md-10">
-      <h1 class="heading">
+      <h1 class="heading" id="homePage">
         <img
           src="{{ url_for('static', filename='images/logo-removebg.png') }}"
           class="logo-img"
         />
         Mamta Soap Works
       </h1>
-      <!-- <p class="moto">Kum Gale Jyada Chale</p> -->
+      <p class="moto">Stain Never Sustain</p>
     </div>
   </div>
 
+  <!-- Img and Manu-data -->
   <div class="row">
     <div class="col-md-4 d-flex justify-content-center my-3">
       <img
         src="{{ url_for('static', filename='images/rk_soap.jpeg') }}"
-        class="d-block rk-img animate__animated animate__fadeInLeft"
+        class="d-block rk-img"
+        alt="Rk soap with water"
+      />
+    </div>
+    <div class="col-md-8 my-3">
+      <h2>Manufacturer Of</h2><br/>
+      <div class="manu-data-div"><br/>
+        <h3 class="text-right manu-data animate__animated animate__fadeInLeft">FABRIC WASHING SOAP</h3><br/>
+        <h3 class="text-left manu-data animate__animated animate__fadeInRight">DISHWASH DETERGENT LIQUID</h3><br/>
+        <h3 class="text-right manu-data animate__animated animate__fadeInLeft">DETERGENT POWDER</h3><br/>
+        <h3 class="text-left manu-data animate__animated animate__fadeInRight">FABRIC CLEANER DETERGENT LIQUID</h3>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Our Vision -->
+  <br/><br/>
+  <div class="row">
+    <div
+      class="col-md-4 d-flex justify-content-center my-3 align-items-center animate__animated animate__fadeInRight">
+    <div class="cust-text rk-img justify-content-center "><h1 class="my-4">OUR VISION</h1>
+      <p class="my-5 just">To be a trusted leader in the soap industry, where <b>quality and service</b> are at the heart of everything we do. We are committed to crafting superior products that enrich everyday lives while delivering unmatched customer satisfaction, ensuring that excellence and integrity define our brand. </p>
+    </div>
+    </div>
+    <div class="col-md-4 d-flex justify-content-center my-3">
+      <img
+        src="{{ url_for('static', filename='images/soap_tshirt.jpeg') }}"
+        class="d-block rk-img"
         alt="Rk soap with water"
       />
     </div>
     <div class="col-md-4 d-flex justify-content-center my-3">
       <img
-        src="{{ url_for('static', filename='images/girl_soap_rk.jpeg') }}"
+        src="{{ url_for('static', filename='images/girl.JPG') }}"
         class="d-block rk-img animate__animated animate__fadeInUp"
         alt="Rk soap with water"
       />
-    </div>
-    <div
-      class="col-md-4 d-flex justify-content-center my-3 align-items-center animate__animated animate__fadeInRight">
-      <div class="cust-text rk-img d-flex justify-content-center align-items-center"><b><h1>Kum Ghale<br /><br />Jyada Chale ....</h1></b></div>
     </div>
   </div>
 
   <br /><br />
   <!-- img and right desc -->
-  <div class="row my-5">
+  <div class="row my-3">
     <div class="col-md-6 d-flex justify-content-center align-items-center">
       <img
         src="{{ url_for('static', filename='images/12----5X7-removebg-preview.png') }}"
@@ -80,13 +104,15 @@
   </div>
 </div>
 
+
+<!-- Start of products  -->
 <br /><br />
 <div class="container-fluid">
-  <h1>Our Products</h1>
+  <h1 id="productsPage">Our Products</h1>
   <br />
   <div class="row">
     <div class="col-md-4 d-flex justify-content-center my-4">
-      <div class="card" style="width: 20rem">
+      <div class="card bg-div-col" style="width: 20rem">
         <img
           src="{{ url_for('static', filename='images/10----5X7.jpg') }}"
           width="18rem"
@@ -94,13 +120,13 @@
           class="card-img-top"
           alt="..."
         />
-        <div class="card-body">
+        <div class="card-body bg-div-col">
           <h5 class="card-title">R.K Dishwasing Liquid</h5>
         </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">An item</li>
-          <li class="list-group-item">A second item</li>
-          <li class="list-group-item">A third item</li>
+        <ul class="list-group list-group-flush bg-div-col">
+          <li class="list-group-item bg-div-col">An item</li>
+          <li class="list-group-item bg-div-col">A second item</li>
+          <li class="list-group-item bg-div-col">A third item</li>
         </ul>
       </div>
     </div>
@@ -183,11 +209,21 @@
   </div>
 </div>
 
+<!-- Start of Contact Us Page -->
 <br /><br />
 <div class="container-fluid">
-  <h1>Contact Us</h1><br/><br/><br/><br/><br/><br/><br/><br/>
+  <h1 id="contactPage">Contact Us</h1><br/><br/><br/><br/><br/><br/><br/><br/>
   <div class="row">
-    <div class="col-md-6 text-center">
+    <div class="col-md-4 text-center">
+      <h2><b>Email & Phone</b></h2><br/>
+      <p class="addr">
+        Mamta Soap Works<br />
+        Gajanand Compound<br />
+        Dhobi Ghat Road<br />
+        Ulhasnagar 421001<br />
+      </p><br/><br/><br/><br/><br/><br/>
+    </div>
+    <div class="col-md-4">
       <h2><b>Address</b></h2><br/>
       <p class="addr">
         Mamta Soap Works<br />
@@ -196,7 +232,16 @@
         Ulhasnagar 421001<br />
       </p><br/><br/><br/><br/><br/><br/>
     </div>
-    <div class="col-md-6 text-center"><h2><b>Form</b></h2></div>
+    <div class="col-md-4">
+      <h2><b>Address</b></h2><br/>
+    <p class="addr">
+      Mamta Soap Works<br />
+      Gajanand Compound<br />
+      Dhobi Ghat Road<br />
+      Ulhasnagar 421001<br />
+    </p><br/><br/><br/><br/><br/><br/>
+    </div>
+    
   </div>
 </div>
 {% endblock %}

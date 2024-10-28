@@ -1,5 +1,5 @@
 body {
-  font-family: "Playwrite GB S", cursive;;
+  font-family: "Playwrite GB S", cursive;
   margin: 0;
   padding: 0;
   background-color: #EBD3F8;
@@ -24,6 +24,7 @@ body {
 
 .content {
   text-align: center;
+  margin-top: 80px;
 }
 
 footer {
@@ -90,23 +91,63 @@ html, body {
 .card-img-top{
   object-fit: contain;
 }
+.text-right{
+  text-align: right;
+}
+.manu-data{
+  font-family:"Bungee Inline", sans-serif;
+  color: #44548c;
+  font-size: 2.3rem;
+}
+.sticky-to{
+  position: fixed !important;
+  top: 0 !important;
+  z-index: 10000 !important;
+  width: 100% !important;
+}
+.just{
+  text-align: justify;
+  padding: 20px;
+}
+.text-left{
+  text-align: left;
+  color: #FF885B;
+}
+.bg-div-col{
+  background-color: #EBD3F8;
+  border: none;
+}
 
 @media only screen and (max-width: 800px) {
-  .navbar a ,.moto,.heading{
+  .navbar a ,.moto,.heading,.manu-data, .just{
     font-size: 1rem;
+  }
+  .moto{
+    left: 50px;
+    top: -10px
+  }
+  .just{
+    font-size: 0.9rem;
+    padding: 5px;
+    margin-right: 2px;
+    margin-left: 2px;
   }
   .logo-img{
     height: 50px;
   }
   .rk-img{
-    width: 350px;
-    height: 350px;
+    width: 300px;
+    height: 300px;
   }
   .descrp{
     border: none;
     border-bottom-left-radius: 0px;
-    border-top-left-radius: 0px;
-    
+    border-top-left-radius: 0px; 
+  }
+  .manu-data-div{
+    border: 2px solid #44548c;
+    border-left: none;
+    border-right: none;
   }
 }
 
