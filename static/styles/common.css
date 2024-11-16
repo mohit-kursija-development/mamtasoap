@@ -85,7 +85,7 @@ html, body {
 .cust-text{
   background-color: #FF885B;
 }
-.addr{
+.addr, .icon-text, .form-label, .form-inp{
   font-size: 1.5rem;
 }
 .card-img-top{

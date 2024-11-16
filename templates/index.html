@@ -131,7 +131,7 @@
       </div>
     </div>
     <div class="col-md-4 d-flex justify-content-center my-4">
-      <div class="card" style="width: 20rem">
+      <div class="card bg-div-col" style="width: 20rem">
         <img
           src="{{ url_for('static', filename='images/6----5X7.jpg') }}"
           width="18rem"
@@ -139,18 +139,18 @@
           class="card-img-top"
           alt="..."
         />
-        <div class="card-body">
+        <div class="card-body bg-div-col">
           <h5 class="card-title">Ramesh Washing Soap</h5>
         </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">An item</li>
-          <li class="list-group-item">A second item</li>
-          <li class="list-group-item">A third item</li>
+        <ul class="list-group list-group-flush bg-div-col">
+          <li class="list-group-item bg-div-col">An item</li>
+          <li class="list-group-item bg-div-col">A second item</li>
+          <li class="list-group-item bg-div-col">A third item</li>
         </ul>
       </div>
     </div>
     <div class="col-md-4 d-flex justify-content-center my-4">
-      <div class="card" style="width: 20rem">
+      <div class="card bg-div-col" style="width: 20rem">
         <img
           src="{{ url_for('static', filename='images/14----5X7.jpg') }}"
           width="18rem"
@@ -158,18 +158,18 @@
           class="card-img-top"
           alt="..."
         />
-        <div class="card-body">
+        <div class="card-body bg-div-col">
           <h5 class="card-title">R.K. Fabric Cleaner</h5>
         </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">An item</li>
-          <li class="list-group-item">A second item</li>
-          <li class="list-group-item">A third item</li>
+          <li class="list-group-item bg-div-col">An item</li>
+          <li class="list-group-item bg-div-col">A second item</li>
+          <li class="list-group-item bg-div-col">A third item</li>
         </ul>
       </div>
     </div>
     <div class="col-md-4 d-flex justify-content-center my-4">
-      <div class="card" style="width: 20rem">
+      <div class="card bg-div-col" style="width: 20rem">
         <img
           src="{{ url_for('static', filename='images/31----5X7.jpg') }}"
           width="18rem"
@@ -177,18 +177,18 @@
           class="card-img-top"
           alt="..."
         />
-        <div class="card-body">
+        <div class="card-body bg-div-col">
           <h5 class="card-title">R.K. Dishwasing Liquid</h5>
         </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">An item</li>
-          <li class="list-group-item">A second item</li>
-          <li class="list-group-item">A third item</li>
+        <ul class="list-group list-group-flush bg-div-col">
+          <li class="list-group-item bg-div-col">An item</li>
+          <li class="list-group-item bg-div-col">A second item</li>
+          <li class="list-group-item bg-div-col">A third item</li>
         </ul>
       </div>
     </div>
     <div class="col-md-4 d-flex justify-content-center my-4">
-      <div class="card" style="width: 20rem">
+      <div class="card bg-div-col" style="width: 20rem">
         <img
           src="{{ url_for('static', filename='images/1----5X7.jpg') }}"
           width="18rem"
@@ -196,13 +196,13 @@
           class="card-img-top"
           alt="..."
         />
-        <div class="card-body">
+        <div class="card-body bg-div-col">
           <h5 class="card-title">R.K. Washing Soap</h5>
         </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">An item</li>
-          <li class="list-group-item">A second item</li>
-          <li class="list-group-item">A third item</li>
+        <ul class="list-group list-group-flush bg-div-col">
+          <li class="list-group-item bg-div-col">An item</li>
+          <li class="list-group-item bg-div-col">A second item</li>
+          <li class="list-group-item bg-div-col">A third item</li>
         </ul>
       </div>
     </div>
@@ -217,10 +217,8 @@
     <div class="col-md-4 text-center">
       <h2><b>Email & Phone</b></h2><br/>
       <p class="addr">
-        Mamta Soap Works<br />
-        Gajanand Compound<br />
-        Dhobi Ghat Road<br />
-        Ulhasnagar 421001<br />
+        <p class="icon-text"><i class="bi bi-envelope-fill"></i> sunilkurseja@gmail.com </p>  <!-- Email icon -->
+        <p class="icon-text"><i class="bi bi-telephone-fill"></i> 02512708650 </p><!-- Phone icon -->
       </p><br/><br/><br/><br/><br/><br/>
     </div>
     <div class="col-md-4">
@@ -233,13 +231,15 @@
       </p><br/><br/><br/><br/><br/><br/>
     </div>
     <div class="col-md-4">
-      <h2><b>Address</b></h2><br/>
-    <p class="addr">
-      Mamta Soap Works<br />
-      Gajanand Compound<br />
-      Dhobi Ghat Road<br />
-      Ulhasnagar 421001<br />
-    </p><br/><br/><br/><br/><br/><br/>
+      <h2><b>Form</b></h2><br/>
+      <form onsubmit="">
+        <p>Fill these details if you want a callback from us.</p>
+        <label class="form-label"> Name </label>
+        <input type="text" required class="form-inp"><br/>
+        <label class="form-label my-2"> Phone </label>
+        <input type="number" required class="form-inp"><br/>
+        <input type="submit" class="btn btn-primary my-2">
+      </form>
     </div>
     
   </div>
