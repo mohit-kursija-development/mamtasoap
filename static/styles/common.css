@@ -53,12 +53,12 @@ html, body {
 }
 .moto{
   position: relative;
-  top:-35px;
-  left: 250px;
-  transform: rotate(-10deg); /* Rotate the paragraph by 15 degrees */
+  top:-30px;
+  left: 150px;
+  /* transform: rotate(-10deg); Rotate the paragraph by 15 degrees */
   font-size: 1.5rem;
   display: inline-block;
-  color: #FF885B;
+  color: #ff0000;
 }
 .rk-img{
   width: 400px;
@@ -77,7 +77,7 @@ html, body {
   border-bottom-left-radius: 100px;
 }
 .cust-li{
-  list-style-image: url(/right-arrow.svg);
+  /* list-style-image: url(/right-arrow.svg); */
   /* OR */
   list-style-type: '👉';
   padding-inline-start: 1ch;
@@ -111,11 +111,14 @@ html, body {
 }
 .text-left{
   text-align: left;
-  color: #FF885B;
+  color: #ff0000;
 }
 .bg-div-col{
   background-color: #EBD3F8;
   border: none;
+}
+.text-diff{
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 @media only screen and (max-width: 800px) {
@@ -124,7 +127,7 @@ html, body {
   }
   .moto{
     left: 50px;
-    top: -10px
+    top: -25px
   }
   .just{
     font-size: 0.9rem;
@@ -139,6 +142,9 @@ html, body {
     width: 300px;
     height: 300px;
   }
+  .rk-cust-img{
+    height: 450px;
+  }
   .descrp{
     border: none;
     border-bottom-left-radius: 0px;
@@ -151,7 +157,11 @@ html, body {
   }
 }
 
-
+@media only screen and (max-width: 350px) {
+  *,body{
+    font-size: 1rem;
+  }
+}
 
 
 

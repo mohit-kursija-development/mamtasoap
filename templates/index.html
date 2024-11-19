@@ -64,7 +64,7 @@
   <div class="row my-3">
     <div class="col-md-6 d-flex justify-content-center align-items-center">
       <img
-        src="{{ url_for('static', filename='images/12----5X7-removebg-preview.png') }}"
+        src="{{ url_for('static', filename='images/31----5X7-removebg-preview.png') }}"
         class="d-block rk-img rk-cust-img"
         alt="Rk soap bottles img"
       />
@@ -90,8 +90,7 @@
         </li>
         <br />
         <li class="cust-li">
-          We ensure timely delivery, complete with detailed invoicing and
-          reliable service.
+          We ensure timely delivery, and reliable service.
         </li>
         <br />
         <li class="cust-li">
@@ -109,117 +108,44 @@
 <br /><br />
 <div class="container-fluid">
   <h1 id="productsPage">Our Products</h1>
-  <br />
+  <br /> 
   <div class="row">
+    {% for card in cards %}
     <div class="col-md-4 d-flex justify-content-center my-4">
       <div class="card bg-div-col" style="width: 20rem">
         <img
-          src="{{ url_for('static', filename='images/10----5X7.jpg') }}"
+          src="{{ url_for('static', filename=card.image) }}"
           width="18rem"
           height="300px"
           class="card-img-top"
           alt="..."
         />
         <div class="card-body bg-div-col">
-          <h5 class="card-title">R.K Dishwasing Liquid</h5>
+          <h5 class="card-title">{{ card.title }}</h5>
         </div>
         <ul class="list-group list-group-flush bg-div-col">
-          <li class="list-group-item bg-div-col">An item</li>
-          <li class="list-group-item bg-div-col">A second item</li>
-          <li class="list-group-item bg-div-col">A third item</li>
+          {% for item in card["items"] %}
+            <li class="list-group-item bg-div-col">{{ item }}</li>
+          {% endfor %}
         </ul>
       </div>
     </div>
-    <div class="col-md-4 d-flex justify-content-center my-4">
-      <div class="card bg-div-col" style="width: 20rem">
-        <img
-          src="{{ url_for('static', filename='images/6----5X7.jpg') }}"
-          width="18rem"
-          height="300px"
-          class="card-img-top"
-          alt="..."
-        />
-        <div class="card-body bg-div-col">
-          <h5 class="card-title">Ramesh Washing Soap</h5>
-        </div>
-        <ul class="list-group list-group-flush bg-div-col">
-          <li class="list-group-item bg-div-col">An item</li>
-          <li class="list-group-item bg-div-col">A second item</li>
-          <li class="list-group-item bg-div-col">A third item</li>
-        </ul>
-      </div>
-    </div>
-    <div class="col-md-4 d-flex justify-content-center my-4">
-      <div class="card bg-div-col" style="width: 20rem">
-        <img
-          src="{{ url_for('static', filename='images/14----5X7.jpg') }}"
-          width="18rem"
-          height="300px"
-          class="card-img-top"
-          alt="..."
-        />
-        <div class="card-body bg-div-col">
-          <h5 class="card-title">R.K. Fabric Cleaner</h5>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item bg-div-col">An item</li>
-          <li class="list-group-item bg-div-col">A second item</li>
-          <li class="list-group-item bg-div-col">A third item</li>
-        </ul>
-      </div>
-    </div>
-    <div class="col-md-4 d-flex justify-content-center my-4">
-      <div class="card bg-div-col" style="width: 20rem">
-        <img
-          src="{{ url_for('static', filename='images/31----5X7.jpg') }}"
-          width="18rem"
-          height="300px"
-          class="card-img-top"
-          alt="..."
-        />
-        <div class="card-body bg-div-col">
-          <h5 class="card-title">R.K. Dishwasing Liquid</h5>
-        </div>
-        <ul class="list-group list-group-flush bg-div-col">
-          <li class="list-group-item bg-div-col">An item</li>
-          <li class="list-group-item bg-div-col">A second item</li>
-          <li class="list-group-item bg-div-col">A third item</li>
-        </ul>
-      </div>
-    </div>
-    <div class="col-md-4 d-flex justify-content-center my-4">
-      <div class="card bg-div-col" style="width: 20rem">
-        <img
-          src="{{ url_for('static', filename='images/1----5X7.jpg') }}"
-          width="18rem"
-          height="300px"
-          class="card-img-top"
-          alt="..."
-        />
-        <div class="card-body bg-div-col">
-          <h5 class="card-title">R.K. Washing Soap</h5>
-        </div>
-        <ul class="list-group list-group-flush bg-div-col">
-          <li class="list-group-item bg-div-col">An item</li>
-          <li class="list-group-item bg-div-col">A second item</li>
-          <li class="list-group-item bg-div-col">A third item</li>
-        </ul>
-      </div>
-    </div>
-  </div>
+    {% endfor %}
+</div>
 </div>
 
 <!-- Start of Contact Us Page -->
 <br /><br />
 <div class="container-fluid">
-  <h1 id="contactPage">Contact Us</h1><br/><br/><br/><br/><br/><br/><br/><br/>
+  <h1 id="contactPage">Contact Us</h1><br/><br/><br/><br/><br/>
   <div class="row">
     <div class="col-md-4 text-center">
       <h2><b>Email & Phone</b></h2><br/>
       <p class="addr">
-        <p class="icon-text"><i class="bi bi-envelope-fill"></i> sunilkurseja@gmail.com </p>  <!-- Email icon -->
-        <p class="icon-text"><i class="bi bi-telephone-fill"></i> 02512708650 </p><!-- Phone icon -->
-      </p><br/><br/><br/><br/><br/><br/>
+        <p class="icon-text text-diff"><i class="bi bi-envelope-fill"></i> sunilkurseja@gmail.com </p>  <!-- Email icon -->
+        <p class="icon-text"><i class="bi bi-telephone-fill"></i> 0251-2708650 </p><!-- Phone icon -->
+        <p class="icon-text"><i class="bi bi-telephone-fill"></i> +91-9860234087 </p><!-- Phone icon -->
+      </p><br/><br/><br/>
     </div>
     <div class="col-md-4">
       <h2><b>Address</b></h2><br/>
@@ -227,21 +153,67 @@
         Mamta Soap Works<br />
         Gajanand Compound<br />
         Dhobi Ghat Road<br />
+        Opp Sai Baba Mandir<br/>
         Ulhasnagar 421001<br />
-      </p><br/><br/><br/><br/><br/><br/>
+      </p><br/><br/><br/>
     </div>
     <div class="col-md-4">
+      <div id="popupMessage" style="display:none; padding: 20px; border: 1px solid black; background: #f0f0f0; z-index: 1000;">
+        <p id="popupText"></p>
+        <button onclick="closePopup()">Close</button>
+      </div>
       <h2><b>Form</b></h2><br/>
-      <form onsubmit="">
+      <form id="callbackForm">
         <p>Fill these details if you want a callback from us.</p>
-        <label class="form-label"> Name </label>
-        <input type="text" required class="form-inp"><br/>
-        <label class="form-label my-2"> Phone </label>
-        <input type="number" required class="form-inp"><br/>
+        <!-- <label class="form-label"> Name </label> -->
+        <input type="text" name="name" required class="form-inp" placeholder="Enter your Name"><br/><br/>
+        <!-- <label class="form-label my-2"> Phone </label> -->
+        <input type="number" required name="phone" class="form-inp" placeholder="Phone number"><br/><br/>
+        <!-- <label class="form-label my-2"> Query </label><br/> -->
+        <textarea class="form-inp" rows="4" required name="query" cols="" placeholder="Enter your Query"></textarea><br/>
         <input type="submit" class="btn btn-primary my-2">
       </form>
+      <br/><br/>
     </div>
+    
     
   </div>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  // Handle AJAX Form Submission
+  $("#callbackForm").on("submit", function(event) {
+      event.preventDefault(); // Prevent default form submission
+      
+      // Extract form data
+      const formData = {
+          name: $("input[name='name']").val(),
+          phone: $("input[name='phone']").val(),
+          query: $("textarea[name='query']").val()
+      };
+      // Send AJAX request
+      $.ajax({
+          url: "/api/submit-form",  // API endpoint
+          method: "POST",
+          contentType: "application/json",
+          data: JSON.stringify(formData),
+          success: function(response) {
+              // Show success message in popup
+              $("#popupText").text("We will contact you within 5 working days.");
+              $("#popupMessage").show();
+          },
+          error: function(xhr) {
+              // Show error message in popup
+              $("#popupText").text("Failed to send Query! Try Again in few hours or call us directly");
+              $("#popupMessage").show();
+          }
+      });
+  });
+
+  // Close Popup Function
+  function closePopup() {
+      $("#popupMessage").hide();
+  }
+</script>
 {% endblock %}
