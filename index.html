@@ -178,7 +178,7 @@
             <button onclick="closePopup()">Close</button>
           </div>
           <h2><b>Form</b></h2><br/>
-          <form id="callbackForm">
+          <form id="callbackForm" action="https://formsubmit.io/send/meratimepass2@gmail.com" method="POST">
             <p>Fill these details if you want a callback from us.</p>
             <input type="text" name="name" required class="form-inp" placeholder="Enter your Name"><br/><br/>
             <input type="number" required name="phone" class="form-inp" placeholder="Phone number"><br/><br/>
@@ -297,47 +297,28 @@
         $('#productsCards').html(html);
       });
 
-      // Handle AJAX Form Submission (with validation and real submission)
+      // Handle form validation and allow normal submission
       $("#callbackForm").on("submit", function(event) {
-          event.preventDefault(); // Prevent default form submission
           // Extract form data
           const name = $("input[name='name']").val().trim();
           const phone = $("input[name='phone']").val().trim();
-          const query = $("textarea[name='query']").val().trim();
 
           // Validation
           const nameRegex = /^[A-Za-z ]+$/;
           const phoneRegex = /^\d{10}$/;
           if (!nameRegex.test(name)) {
+              event.preventDefault();
               $("#popupText").text("Name should only contain letters and spaces.");
               $("#popupMessage").show();
               return;
           }
           if (!phoneRegex.test(phone)) {
+              event.preventDefault();
               $("#popupText").text("Phone should be exactly 10 digits and contain only numbers.");
               $("#popupMessage").show();
               return;
           }
-          // If valid, submit to formsubmit.io
-          $.ajax({
-              url: "https://formsubmit.io/send/meratimepass2@gmail.com", // Replace with your real email
-              method: "POST",
-              data: {
-                  name: name,
-                  phone: phone,
-                  query: query
-              },
-              dataType: "json",
-              success: function() {
-                  $("#popupText").text("We will contact you within 5 working days.");
-                  $("#popupMessage").show();
-                  $("#callbackForm")[0].reset();
-              },
-              error: function() {
-                  $("#popupText").text("There was an error submitting the form. Please try again later.");
-                  $("#popupMessage").show();
-              }
-          });
+          // If valid, allow normal form submission (no event.preventDefault())
       });
 
       // Close Popup Function
