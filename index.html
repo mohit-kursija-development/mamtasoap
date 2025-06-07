@@ -297,21 +297,47 @@
         $('#productsCards').html(html);
       });
 
-      // Handle AJAX Form Submission (demo only, no backend)
+      // Handle AJAX Form Submission (with validation and real submission)
       $("#callbackForm").on("submit", function(event) {
           event.preventDefault(); // Prevent default form submission
           // Extract form data
-          const formData = {
-              name: $("input[name='name']").val(),
-              phone: $("input[name='phone']").val(),
-              query: $("textarea[name='query']").val()
-          };
-          // Simulate AJAX request (since no backend)
-          setTimeout(function() {
-              $("#popupText").text("We will contact you within 5 working days.");
+          const name = $("input[name='name']").val().trim();
+          const phone = $("input[name='phone']").val().trim();
+          const query = $("textarea[name='query']").val().trim();
+
+          // Validation
+          const nameRegex = /^[A-Za-z ]+$/;
+          const phoneRegex = /^\d{10}$/;
+          if (!nameRegex.test(name)) {
+              $("#popupText").text("Name should only contain letters and spaces.");
               $("#popupMessage").show();
-          }, 500);
-          // To use real backend, replace above with AJAX call as in your original code
+              return;
+          }
+          if (!phoneRegex.test(phone)) {
+              $("#popupText").text("Phone should be exactly 10 digits and contain only numbers.");
+              $("#popupMessage").show();
+              return;
+          }
+          // If valid, submit to formsubmit.io
+          $.ajax({
+              url: "https://formsubmit.io/send/meratimepass2@gmail.com", // Replace with your real email
+              method: "POST",
+              data: {
+                  name: name,
+                  phone: phone,
+                  query: query
+              },
+              dataType: "json",
+              success: function() {
+                  $("#popupText").text("We will contact you within 5 working days.");
+                  $("#popupMessage").show();
+                  $("#callbackForm")[0].reset();
+              },
+              error: function() {
+                  $("#popupText").text("There was an error submitting the form. Please try again later.");
+                  $("#popupMessage").show();
+              }
+          });
       });
 
       // Close Popup Function
