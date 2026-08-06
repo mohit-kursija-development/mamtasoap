@@ -1,0 +1,38 @@
+# Mamta Soap Works — https://mamtasoapworks.com/
+
+# Disallow AI bots
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: cohere-ai
+Disallow: /
+
+User-agent: Copilot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Omgili
+Disallow: /
+
+User-agent: FacebookBot
+Disallow: /
+
+# Allow everything else
+User-agent: *
+Allow: /
+
+Sitemap: https://mamtasoapworks.com/sitemap.xml

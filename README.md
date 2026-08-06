@@ -1,33 +1,87 @@
 # mamta-soap-website
-This project is a single-page website for **Mamta Soap Works**, showcasing their products and providing contact information for inquiries.
 
-## Project Structure
-The project consists of the following files and directories:
+Single-page marketing site for **Mamta Soap Works** — manufacturers of fabric washing soap,
+dishwash detergent liquid, detergent powder and fabric cleaner in Ulhasnagar since 1978.
+Deployed to `mamtasoapworks.com` via GitHub Pages from the `single_page` branch.
 
-- **index.html**: Contains the complete HTML structure for the Mamta Soap Works website. It includes sections for the home page, products, and contact information, along with embedded CSS styles and JavaScript for form submission.
+## Project structure
 
-- **css/common.css**: Contains the CSS styles for the website. It defines styles for the body, navbar, footer, and various elements to ensure a consistent look and feel across the site.
+- **index.html** — the entire page: navbar, hero, marquee, about, "what sets us apart",
+  process, product catalogue, FAQ, contact and footer, plus one inline `<script>` holding
+  all behaviour and a JSON-LD structured-data block.
+- **css/common.css** — the design system: colour/typography tokens, every component, the
+  responsive breakpoints and the animation keyframes.
+- **images/** — product photography, logo and favicon.
+- **robots.txt** / **sitemap.xml** — served from the domain root by GitHub Pages.
+- **tools/seo-sync.py** — optional helper that regenerates the JSON-LD and sitemap from
+  the markup (see below).
+- **tools/optimise-images.py** — downscales and recompresses the images the page uses.
 
-- **images/**: This directory contains all the images used in the website, including product images, logos, and icons. The images are referenced in the `index.html` file to display them appropriately.
+## Running it locally
 
-## HTML Structure Overview
-The `index.html` file includes:
-- A navbar with links to different sections of the page.
-- A hero section with the company logo and tagline.
-- A section showcasing the products with images and descriptions.
-- A contact section with a form for user inquiries.
-- JavaScript for handling form submissions via AJAX.
+No build step and no dependencies to install:
 
-## CSS Overview
-The `common.css` file includes:
-- Styles for layout and typography.
-- Responsive design adjustments for different screen sizes.
-- Specific styles for elements like buttons, lists, and images.
+```bash
+python3 -m http.server 8000
+# then open http://localhost:8000
+```
 
-## Image Assets
-The `images` folder contains:
-- Product images for display in the products section.
-- Logo and favicon for branding.
-- Other relevant images used throughout the site.
+Use a server rather than opening `index.html` directly — relative asset paths and the CDN
+font/icon links behave better over `http://`.
 
-This structure allows for a single-page website that is easy to host and maintain.
+## Editing the product range
+
+All thirteen products are written directly in `index.html` as `<article class="product">`
+blocks inside `#productsGrid` — they are real markup so search engines index them without
+running JavaScript. Copy an existing block and edit the image, title, description and the
+two `<span class="spec">` pills. Copy image paths verbatim; several filenames contain
+literal spaces.
+
+Two things to update alongside it:
+
+1. the filter chip count for that category in `#filters`;
+2. the generated SEO data — run `python3 tools/seo-sync.py`.
+
+## Keeping SEO data in sync
+
+`tools/seo-sync.py` reads `index.html` and regenerates the JSON-LD block (Organization,
+WebSite, WebPage, the 13-item product `ItemList` and the `FAQPage`) plus `sitemap.xml`.
+Run it after changing products, FAQ entries or image alt text:
+
+```bash
+python3 tools/seo-sync.py
+```
+
+It is idempotent and edits nothing else. The site deploys correctly without it — it just
+stops the structured data drifting away from the page.
+
+## Adding a new product photo
+
+The source photographs are print resolution; the page displays them a few hundred pixels
+wide. After dropping a new image into `images/` and referencing it, run:
+
+```bash
+python3 tools/optimise-images.py --dry-run   # see what it would do
+python3 tools/optimise-images.py             # apply
+```
+
+It downscales to a 1200 px long edge (enough for a retina lightbox), re-encodes, and
+updates the `width`/`height` attributes in `index.html`. It never upscales and never
+writes a file bigger than the one it started with, so running it twice is harmless.
+
+This already ran once: the referenced images went from 9.6 MB to 1.3 MB with no visible
+quality change, and `favicon.ico` from 207 KB to 5 KB.
+
+## Contact form
+
+The callback form posts directly to [formsubmit.co](https://formsubmit.co); there is no
+backend. It validates the name, a 10-digit phone number and a non-empty query in the
+browser, shows errors inline, and returns the visitor to `/?sent=1` for a success message.
+
+## Notes
+
+- No JavaScript frameworks — plain HTML, CSS and vanilla JS. The only external resources are
+  Google Fonts (Fraunces + Plus Jakarta Sans) and the bootstrap-icons font.
+- Content stays visible if JavaScript fails: the animated start states are gated behind a
+  `.js` class that the script adds on startup.
+- Animation is disabled automatically for visitors who set `prefers-reduced-motion`.
