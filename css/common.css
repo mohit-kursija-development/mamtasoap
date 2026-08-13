@@ -1065,111 +1065,6 @@ h4 {
 }
 
 /* ==========================================================================
-   Process
-   ========================================================================== */
-
-.process {
-  background: var(--navy-deep);
-  color: var(--cream);
-  border-radius: clamp(0px, 4vw, var(--r-xl));
-  padding: clamp(2.8rem, 6vw, 4.5rem);
-  position: relative;
-  overflow: hidden;
-}
-
-.process::before {
-  content: "";
-  position: absolute;
-  inset: -40% -10% auto auto;
-  width: 520px;
-  height: 520px;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(255, 136, 91, 0.22) 0%,
-    rgba(255, 136, 91, 0) 68%
-  );
-}
-
-.process .section-title,
-.process h3 {
-  color: var(--cream);
-}
-
-.process .lede {
-  color: rgba(251, 241, 233, 0.74);
-}
-
-.process__steps {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1.6rem;
-  position: relative;
-}
-
-.process__steps::before {
-  content: "";
-  position: absolute;
-  top: 26px;
-  left: 3%;
-  right: 3%;
-  height: 2px;
-  background: repeating-linear-gradient(
-    90deg,
-    rgba(251, 241, 233, 0.28) 0 8px,
-    transparent 8px 16px
-  );
-  transform-origin: left;
-  transition: transform 1.4s var(--ease-out) 0.2s;
-}
-
-.js .process__steps::before {
-  transform: scaleX(0);
-}
-
-.process__steps.is-visible::before {
-  transform: scaleX(1);
-}
-
-.step {
-  position: relative;
-}
-
-.step__num {
-  display: grid;
-  place-items: center;
-  width: 54px;
-  height: 54px;
-  border-radius: 50%;
-  background: var(--navy);
-  box-shadow: 0 0 0 6px var(--navy-deep), inset 0 0 0 1.5px var(--orange-a30);
-  font-family: var(--font-display);
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: var(--orange);
-  margin-bottom: 1.35rem;
-  transition: background 0.45s var(--ease-out), color 0.45s var(--ease-out),
-    transform 0.55s var(--ease-spring);
-}
-
-.step:hover .step__num {
-  background: var(--orange);
-  color: var(--navy-deep);
-  transform: translateY(-5px);
-}
-
-.step h3 {
-  font-size: 1.16rem;
-  margin-bottom: 0.55rem;
-}
-
-.step p {
-  color: rgba(251, 241, 233, 0.7);
-  font-size: 0.93rem;
-  line-height: 1.7;
-}
-
-/* ==========================================================================
    Products
    ========================================================================== */
 
@@ -2137,15 +2032,6 @@ a.contact-card:hover .contact-card__icon {
     grid-template-columns: 1fr;
   }
 
-  .process__steps {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 2rem 1.5rem;
-  }
-
-  .process__steps::before {
-    display: none;
-  }
-
   .footer__grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -2246,10 +2132,6 @@ a.contact-card:hover .contact-card__icon {
     grid-template-columns: 1fr;
   }
 
-  .process__steps {
-    grid-template-columns: 1fr;
-  }
-
   .btn {
     padding: 0.85rem 1.35rem;
     font-size: 0.9rem;
@@ -2289,8 +2171,7 @@ a.contact-card:hover .contact-card__icon {
     transform: none !important;
   }
 
-  .rule,
-  .process__steps::before {
+  .rule {
     transform: scaleX(1) !important;
   }
 

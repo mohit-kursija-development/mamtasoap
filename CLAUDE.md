@@ -49,7 +49,7 @@ The script reads that DOM once into a `cards` array (`node`, `image`, `alt`, `ti
 
 **Contact form.** `#callbackForm` POSTs natively to `https://formsubmit.co/<email>` with hidden `_subject` / `_captcha` / `_template` / `_next` fields plus a `_honey` honeypot. The submit handler validates name (`/^[A-Za-z ]+$/`), phone (`/^\d{10}$/`) and a non-empty query, and only calls `event.preventDefault()` on failure — on success it deliberately falls through to the browser's native submission. Errors render inline via `.field.is-invalid` + the `data-error` attribute (there is no popup div any more). `_next` sends the visitor back to `/?sent=1`, which the script turns into a success toast before cleaning the URL.
 
-**Sections** are `#home`, `#about`, `#why`, `#process`, `#products`, `#faq`, `#contact`, linked from the fixed navbar and tracked by a scroll-spy observer.
+**Sections** are `#home`, `#about`, `#why`, `#products`, `#faq`, `#contact`, linked from the fixed navbar and tracked by a scroll-spy observer.
 
 ## SEO — what must stay true
 

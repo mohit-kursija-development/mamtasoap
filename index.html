@@ -61,7 +61,6 @@
       <nav class="nav__links" aria-label="Primary">
         <a class="nav__link" href="#about" data-spy="about">About</a>
         <a class="nav__link" href="#why" data-spy="why">Why us</a>
-        <a class="nav__link" href="#process" data-spy="process">Process</a>
         <a class="nav__link" href="#products" data-spy="products">Products</a>
         <a class="nav__link" href="#faq" data-spy="faq">FAQ</a>
       </nav>
@@ -81,10 +80,9 @@
     <nav class="drawer__links" aria-label="Mobile">
       <a class="drawer__link" style="--i:0" href="#about">About</a>
       <a class="drawer__link" style="--i:1" href="#why">Why us</a>
-      <a class="drawer__link" style="--i:2" href="#process">Process</a>
-      <a class="drawer__link" style="--i:3" href="#products">Products</a>
-      <a class="drawer__link" style="--i:4" href="#faq">FAQ</a>
-      <a class="drawer__link" style="--i:5" href="#contact">Contact</a>
+      <a class="drawer__link" style="--i:2" href="#products">Products</a>
+      <a class="drawer__link" style="--i:3" href="#faq">FAQ</a>
+      <a class="drawer__link" style="--i:4" href="#contact">Contact</a>
     </nav>
     <div class="drawer__foot">
       <a href="tel:+919860234087"><i class="bi bi-telephone-fill" aria-hidden="true"></i> +91 98602 34087</a>
@@ -255,42 +253,6 @@
             <h3>Built for bulk</h3>
             <p>Carton counts from 2 to 60 pieces, sized for retail shelves and for wholesale movement alike.</p>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== Process ===================== -->
-    <section class="section" id="process">
-      <div class="container">
-        <div class="process">
-          <div class="section-head" data-reveal>
-            <span class="eyebrow">How it's made</span>
-            <h2 class="section-title">From kettle to carton</h2>
-            <p class="lede">Four steps, unchanged in principle since the works opened.</p>
-          </div>
-
-          <div class="process__steps" id="processSteps">
-            <article class="step" data-reveal style="--d:0ms">
-              <div class="step__num">01</div>
-              <h3>Plant-based base</h3>
-              <p>Every batch starts with plant-based oils. No animal-fat derivatives ever enter the kettle.</p>
-            </article>
-            <article class="step" data-reveal style="--d:120ms">
-              <div class="step__num">02</div>
-              <h3>Made in-house</h3>
-              <p>Mixed, cured and cut at our own works in Ulhasnagar rather than bought in and relabelled.</p>
-            </article>
-            <article class="step" data-reveal style="--d:240ms">
-              <div class="step__num">03</div>
-              <h3>Quality control</h3>
-              <p>Each batch is checked against our standard before it is allowed anywhere near a carton.</p>
-            </article>
-            <article class="step" data-reveal style="--d:360ms">
-              <div class="step__num">04</div>
-              <h3>Packed &amp; dispatched</h3>
-              <p>Cartoned to the box counts you ordered, then sent out on the schedule we committed to.</p>
-            </article>
-          </div>
         </div>
       </div>
     </section>
@@ -667,7 +629,6 @@
           <ul class="footer__list">
             <li><a href="#about">About us</a></li>
             <li><a href="#why">Why Mamta</a></li>
-            <li><a href="#process">How it's made</a></li>
             <li><a href="#products">Products</a></li>
             <li><a href="#faq">FAQ</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -1180,18 +1141,6 @@
       });
     }
     observeReveals(document);
-
-    // The dashed connector line in the process section draws itself in.
-    var steps = $("#processSteps");
-    if (steps) {
-      new IntersectionObserver(function (entries, obs) {
-        entries.forEach(function (e) {
-          if (!e.isIntersecting) return;
-          e.target.classList.add("is-visible");
-          obs.unobserve(e.target);
-        });
-      }, { threshold: 0.25 }).observe(steps);
-    }
 
     /* ================= Navbar ================= */
     var nav = $("#nav");
