@@ -43,7 +43,6 @@ OVERRIDES = {
     "images/rk_soap.jpeg": dict(edge=1200, quality=80),        # hero / LCP
     "images/soap_tshirt.jpeg": dict(edge=1100, quality=82),    # already small
     "images/logo-removebg.png": dict(edge=400),                # nav + apple-touch-icon
-    "images/14 -  - 5X7-removebg-preview.png": dict(edge=500),  # collage cut-out
 }
 
 

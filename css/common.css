@@ -906,8 +906,6 @@ h4 {
 
 .collage {
   position: relative;
-  padding-bottom: 3.5rem;
-  padding-right: 2.5rem;
 }
 
 .collage__main {
@@ -925,23 +923,6 @@ h4 {
 
 .collage:hover .collage__main img {
   transform: scale(1.05);
-}
-
-.collage__cut {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 45%;
-  padding: 1.1rem;
-  border-radius: var(--r-md);
-  background: var(--cream-hi);
-  box-shadow: var(--sh-lg);
-  animation: floaty 8s ease-in-out infinite;
-}
-
-.collage__cut img {
-  width: 100%;
-  height: auto;
 }
 
 .collage__stamp {
@@ -2238,11 +2219,6 @@ a.contact-card:hover .contact-card__icon {
   .section-head--split {
     flex-direction: column;
     align-items: flex-start;
-  }
-
-  .collage {
-    padding-right: 1.5rem;
-    padding-bottom: 2.5rem;
   }
 
   .collage__stamp {
